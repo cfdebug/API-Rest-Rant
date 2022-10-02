@@ -1,29 +1,26 @@
 // Places Router
 const router = require('express').Router()
+const places = require('../models/places.js')
 
 // Route
 router.get('/', (req, res) => {
-    let places = [{
-        name: 'Al Dente',
-        city: 'Seattle',
-        state: 'WA',
-        cuisines: 'Italian',
-        pic: '/images/Restaurant_1.jpg'
-      }, {
-        name: 'Above the Horizon',
-        city: 'Phoenix',
-        state: 'AZ',
-        cuisines: 'Steak, Seafood',
-        pic: '/images/Restaurant_2.jpg'
-      }]
-      
-    res.render('places/index', {places})
+  res.render('places/index', {places})
 })
 
-router.post('/', (req,res) => {
-  console.log(req.body)
-  res.send('POST NEW STUB')
+router.post('/', (req, res) => {
+  if (!req.body.pic) {
+    req.body.pic = 'http://placekitten.com/400/400'
+  }
+  if (!req.body.city) {
+    req.body.city = 'Anytown'
+  }
+  if (!req.body.state) {
+    req.body.state = 'USA'
+  }
+  places.push(req.body)
+  res.redirect('/places')
 })
+
 
 router.get('/new', (req, res) => {
   res.render('places/new')
