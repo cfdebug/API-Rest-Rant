@@ -7,3 +7,17 @@ img {
     height: 500px;
     width: auto;
 }
+
+.blink {
+    animation: blinker 1s step-start infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      color: red;
+    }
+  }
+
+  .main {
+    text-align: center;
+  }
