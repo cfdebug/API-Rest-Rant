@@ -4,7 +4,7 @@ h1 {
   }
 
 img {
-    height: 500px;
+    height: 250px;
     width: auto;
 }
 
@@ -20,4 +20,20 @@ img {
 
   .main {
     text-align: center;
+  }
+
+  .wrapper {
+    min-height: 100vh;
+    margin-bottom: -50px;
+  }
+
+  .footer {
+    display: block;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-group, .btn {
+    margin: 10px;
   }

@@ -16,7 +16,7 @@ function home () {
                 </div>
             </div>
             <a href="/places">
-                <button className="btn-primary blink">Have a Restaurant Review in Mind? Help others avoid a disaster, or find the perfect meal! CLICK HERE!</button>
+                <button className="btn-primary blink">Have a Restaurant Review in Mind? Help others avoid a disaster, or find the perfect meal! CLICK HERE to Explore, Rant, or Rave!</button>
             </a>
 
         </main>
