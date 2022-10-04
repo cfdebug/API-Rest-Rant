@@ -14,17 +14,23 @@ function show (data) {
               </div>
               <div className="col-sm-6">
                 <h1 className='text-primary'>{ data.place.name }</h1>
+                <h5>Established {data.place.founded}</h5>
                 <h2>Rating: Currently Unrated</h2>
+                </div>
+                <div className='col-sm-6'>
+                <h4>
+                  Serving {data.place.cuisines}
+                </h4>
                 </div>
                 <hr />
                 <h2>Comments</h2>
                 <h5>
                     No Comments Yet!
                 </h5>
-                <a href={`/places/${data.id}/edit`} className="btn btn-warning">Edit</a>  
+                <a href={`/places/${data.id}/edit`} className="btn btn-warning">Edit <i className='fas fa-pen'></i></a>  
                 <form method='POST' action={`/places/${data.id}?_method=DELETE`}> 
                     <button type="submit" className="btn btn-danger">
-                        Delete
+                        Delete <i class='fas fa-trash-alt'></i>
                     </button>
                 </form>     
         </div>

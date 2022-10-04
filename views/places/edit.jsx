@@ -8,7 +8,7 @@ function edit (data) {
             <h1 className='text-primary'>
                 Edit Place
             </h1>
-            <form method="POST" action={`/places/${data.place.id}?_method=PUT`}>
+            <form method="POST" action={`/places/${data.id}?_method=PUT`}>
                 <div className='row'>
                 <div className='form-group col-sm-6'>
                     <label htmlFor="name">Place Name</label>
@@ -83,9 +83,13 @@ function edit (data) {
                 </div>
                 </div>
                 <div className='row'>
-                <div className='form-group'>
+                <div className='form-group col-sm-6'>
                     <label htmlFor="cuisines">Cuisines</label>
                     <input className='form-control' id='cuisines' name='cuisines' type="text" value={data.place.cuisines} required />
+                </div>
+                <div className='form-group col-sm-6'>
+                    <label htmlFor="founded">Established</label>
+                    <input className='form-control' id='founded' name='founded' type="text" value={data.place.founded}/>
                 </div>
                 </div>
                 <input className='btn btn-primary' type="submit" value="Submit" />
