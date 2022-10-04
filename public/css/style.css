@@ -11,6 +11,10 @@ img {
 .blink {
     animation: blinker 1s step-start infinite;
   }
+
+.btn-primary {
+  margin: 15px
+}
   
   @keyframes blinker {
     50% {
@@ -18,17 +22,23 @@ img {
     }
   }
 
-  .main {
+  body {
     text-align: center;
   }
 
+  .main {
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: darkgray;
+  }
+
   .wrapper {
-    min-height: 100vh;
+    min-height: 94vh;
     margin-bottom: -50px;
   }
 
   .footer {
-    display: block;
     height: 50px;
     width: 100%;
     text-align: center;
@@ -37,3 +47,28 @@ img {
   .form-group, .btn {
     margin: 10px;
   }
+
+nav {
+    background-color: cornflowerblue;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav a {
+    color: white;
+    font-size: 1.5em;
+}
+
+nav a:hover {
+    color: pink;
+    text-decoration: none;
+}
