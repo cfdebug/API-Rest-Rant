@@ -5,7 +5,7 @@ function new_form () {
     return(
     <Def>
        <main>
-            <h1>
+            <h1 className='text-primary'>
                 Add A New Place
             </h1>
             <form method="POST" action="/places">

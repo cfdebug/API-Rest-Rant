@@ -5,7 +5,7 @@ function index (data) {
     let placesFormatted = data.places.map((place, index) => {
       return (
         <div className="col-sm-6">
-          <h2><a href={`/places/${index}`}>{place.name}</a></h2>
+          <h2 className='text-primary'><a href={`/places/${index}`}>{place.name}</a></h2>
           <p>
             {place.cuisines}
           </p>
@@ -19,7 +19,7 @@ function index (data) {
     return (
       <Def>
           <main className='main'>
-              <h1>Places to Rant or Rave About</h1>
+              <h1 className='text-primary'>Places to Rant or Rave About</h1>
               <div className='row'>
               {placesFormatted}
               </div>

@@ -13,7 +13,7 @@ function show (data) {
                 </h3>
               </div>
               <div className="col-sm-6">
-                <h1>{ data.place.name }</h1>
+                <h1 className='text-primary'>{ data.place.name }</h1>
                 <h2>Rating: Currently Unrated</h2>
                 </div>
                 <hr />
