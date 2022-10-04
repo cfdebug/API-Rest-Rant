@@ -39,7 +39,7 @@ h1 {
   }
 
   .wrapper {
-    min-height: 94vh;
+    min-height: 93vh;
     margin-bottom: -50px;
   }
 
@@ -76,4 +76,9 @@ nav a {
 nav a:hover {
     color: pink;
     text-decoration: none;
+}
+
+.row {
+  margin: 10px;
+  text-align: center;
 }
