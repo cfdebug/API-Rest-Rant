@@ -7,10 +7,10 @@ function home () {
         <main className='main'>
             <h1>REST-Rant</h1>
             <div>
-                <img src="/images/nachos.jpg" alt="Nachos" />
-                <img src="/images/italian.png" alt="Italian Food" />
-                <img src="/images/chinese.jpg" alt="Chinese Food" />
-                <img src="/images/american.jpg" alt="American Food" />
+                <img className='home-img' src="/images/nachos.jpg" alt="Nachos" />
+                <img className='home-img' src="/images/italian.png" alt="Italian Food" />
+                <img className='home-img' src="/images/chinese.jpg" alt="Chinese Food" />
+                <img className='home-img' src="/images/american.jpg" alt="American Food" />
                 <div>
                 Photos by various artist on <a href="https://unsplash.com/s/photos/mexican-food?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash, </a><a href="https://www.chefdenise.com/all/what-to-eat-in-italy-1">Chef Denise, </a><a href='https://www.istockphoto.com/photo/chinese-food-blank-background-gm545286388-98216699?phrase=chinese%20food'>iStock, and </a><a href='https://www.pexels.com/search/american%20food/'>Pexels.</a>
                 </div>

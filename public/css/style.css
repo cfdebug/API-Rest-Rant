@@ -3,9 +3,14 @@ h1 {
     color: cornflowerblue;
   }
 
-img {
+.home-img {
     height: 250px;
     width: auto;
+}
+
+.error {
+  height: 50%;
+  width: auto;
 }
 
 .blink {

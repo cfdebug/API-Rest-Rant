@@ -2,11 +2,12 @@
 const router = require('express').Router()
 const places = require('../models/places.js')
 
-// Route
+// ROUTE
 router.get('/', (req, res) => {
   res.render('places/index', {places})
 })
 
+// ADD
 router.post('/', (req, res) => {
   if (!req.body.pic) {
     req.body.pic = 'http://placekitten.com/400/400'
@@ -21,10 +22,25 @@ router.post('/', (req, res) => {
   res.redirect('/places')
 })
 
-
+// NEW FORM
 router.get('/new', (req, res) => {
   res.render('places/new')
 })
+
+// SHOW
+router.get('/:id', (req, res) => {
+  let id = Number(req.params.id)
+  if (isNaN(id)) {
+    res.render('error404')
+  }
+  else if (!places[id]) {
+    res.render('error404')
+  }
+  else {
+    res.render('places/show', {place: places[id]})
+  }
+})
+
 
 // Export
 module.exports = router
