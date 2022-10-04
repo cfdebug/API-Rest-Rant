@@ -18,7 +18,7 @@ function index (data) {
     })
     return (
       <Def>
-          <main className='main'>
+          <main>
               <h1 className='text-primary'>Places to Rant or Rave About</h1>
               <div className='row'>
               {placesFormatted}

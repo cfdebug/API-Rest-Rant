@@ -9,19 +9,22 @@ function new_form () {
                 Add A New Place
             </h1>
             <form method="POST" action="/places">
-                <div className='form-group'>
+			<div className='row'>
+                <div className='form-group col-sm-6'>
                     <label htmlFor="name">Place Name</label>
                     <input className='form-control' id='name' name='name' type="text" required />
                 </div>
-                <div className='form-group'>
+                <div className='form-group col-sm-6'>
                     <label htmlFor="pic">Place Picture</label>
-                    <input className='form-control' id='pic' name='pic' type="url" />
+                    <input className='form-control' id='pic' name='pic' type="text" />
                 </div>
-                <div className='form-group'>
+			</div>
+			<div className='row'>
+                <div className='form-group col-sm-6'>
                     <label htmlFor="city">City</label>
                     <input className='form-control' id='city' name='city' type="text" />
                 </div>
-                <div className='form-group'>
+                <div className='form-group col-sm-6'>
                     <label htmlFor="state">State</label>
                     <select className='form-control' id='state' name='state'>
                         <option disabled selected value> -- select an option -- </option>
@@ -78,10 +81,13 @@ function new_form () {
 	                    <option value="WY">Wyoming</option>
                     </select>
                 </div>
+				</div>
+				<div className='row'>
                 <div className='form-group'>
                     <label htmlFor="cuisines">Cuisines</label>
                     <input className='form-control' id='cuisines' name='cuisines' type="text" required />
                 </div>
+				</div>
                 <input className='btn btn-primary' type="submit" value="Add Place" />
             </form>
         </main> 

@@ -4,7 +4,7 @@ const Def = require('./default')
 function home () {
     return (
     <Def>
-        <main className='main'>
+        <main>
             <h1 className='text-primary'>REST-Rant</h1>
             <div>
                 <img className='home-img' src="/images/nachos.jpg" alt="Nachos" />
