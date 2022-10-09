@@ -1,15 +1,12 @@
-module.exports = [{
-    name: 'Al Dente',
-    city: 'Seattle',
-    state: 'WA',
-    cuisines: 'Italian',
-    pic: '/images/Restaurant_1.jpg',
-    founded: '1991'
-  }, {
-    name: 'Above the Horizon',
-    city: 'Phoenix',
-    state: 'AZ',
-    cuisines: 'Steak, Seafood',
-    pic: '/images/Restaurant_2.jpg',
-    founded: '2010'
-  }]
+const mongoose = require('mongoose')
+
+const placeSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  pic: { type: String, default:'images/favicon.ico'},
+  cuisines: { type: String, required: true },
+  city: { type: String, default: 'Anytown' },
+  state: { type: String, default: 'USA' },
+  founded: {type: Number}
+})
+
+module.exports = mongoose.model('Place', placeSchema)

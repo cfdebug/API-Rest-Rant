@@ -1,28 +1,42 @@
 // Places Router
 const router = require('express').Router()
-const places = require('../models/places.js')
+const db = require('../models')
 
 // ROUTE
 router.get('/', (req, res) => {
-  res.render('places/index', {places})
+  db.Place.find()
+  .then((places) => {
+    res.render('places/index', {places})
+  })
+  .catch(err => {
+    res.render('error404')
+  })
 })
 
 // ADD
 router.post('/', (req, res) => {
-  if (!req.body.pic) {
-    req.body.pic = 'http://placekitten.com/400/400'
-  }
-  if (!req.body.city) {
-    req.body.city = 'Anytown'
-  }
-  if (!req.body.state) {
-    req.body.state = 'USA'
-  }
-  if (!req.body.founded) {
-    req.body.founded = 'Date Unknown'
-  }
-  places.push(req.body)
-  res.redirect('/places')
+  db.Place.create(req.body)
+  .then(() => {
+    res.redirect('/places')
+  })
+  .catch(err => {
+    console.log('err', err)
+    res.render('error404')
+  })
+  // if (!req.body.pic) {
+  //   req.body.pic = 'http://placekitten.com/400/400'
+  // }
+  // if (!req.body.city) {
+  //   req.body.city = 'Anytown'
+  // }
+  // if (!req.body.state) {
+  //   req.body.state = 'USA'
+  // }
+  // if (!req.body.founded) {
+  //   req.body.founded = 'Date Unknown'
+  // }
+  // places.push(req.body)
+  // res.redirect('/places')
 })
 
 // NEW FORM
@@ -32,16 +46,24 @@ router.get('/new', (req, res) => {
 
 // SHOW
 router.get('/:id', (req, res) => {
-  let id = Number(req.params.id)
-  if (isNaN(id)) {
-    res.render('error404')
-  }
-  else if (!places[id]) {
-    res.render('error404')
-  }
-  else {
-    res.render('places/show', {place: places[id], id})
-  }
+db.Place.findById(req.params.id)
+.then(place => {
+  res.render('places/show', {place})
+})
+.catch(err => {
+  console.log('err', err)
+  res.render('error404')
+})
+  // let id = Number(req.params.id)
+  // if (isNaN(id)) {
+  //   res.render('error404')
+  // }
+  // else if (!places[id]) {
+  //   res.render('error404')
+  // }
+  // else {
+  //   res.render('places/show', {place: places[id], id})
+  // }
 })
 
 // EDIT
