@@ -27,10 +27,10 @@ function show (data) {
                 <h5>
                     No Comments Yet!
                 </h5>
-                <a href={`/places/${data.id}/edit`} className="btn btn-warning">Edit <i className='fas fa-pen'></i></a>  
-                <form method='POST' action={`/places/${data.id}?_method=DELETE`}> 
+                <a href={`/places/${data.place.id}/edit`} className="btn btn-warning">Edit <i className='fas fa-pen'></i></a>  
+                <form method='POST' action={`/places/${data.place.id}?_method=DELETE`}> 
                     <button type="submit" className="btn btn-danger">
-                        Delete <i class='fas fa-trash-alt'></i>
+                        Delete <i className='fas fa-trash-alt'></i>
                     </button>
                 </form>     
         </div>

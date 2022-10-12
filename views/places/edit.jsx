@@ -8,26 +8,26 @@ function edit (data) {
             <h1 className='text-primary'>
                 Edit Place
             </h1>
-            <form method="POST" action={`/places/${data.id}?_method=PUT`}>
+            <form method="POST" action={`/places/${data.place.id}?_method=PUT`}>
                 <div className='row'>
                 <div className='form-group col-sm-6'>
                     <label htmlFor="name">Place Name</label>
-                    <input className='form-control' id='name' name='name' type="text" value={data.place.name} required />
+                    <input className='form-control' id='name' name='name' type="text" defaultValue={data.place.name} required />
                 </div>
                 <div className='form-group col-sm-6'>
                     <label htmlFor="pic">Place Picture</label>
-                    <input className='form-control' id='pic' name='pic' type="text" value={data.place.pic}/>
+                    <input className='form-control' id='pic' name='pic' type="text" defaultValue={data.place.pic}/>
                 </div>
                 </div>
                 <div className='row'>
                 <div className='form-group col-sm-6'>
                     <label htmlFor="city">City</label>
-                    <input className='form-control' id='city' name='city' type="text" value={data.place.city}/>
+                    <input className='form-control' id='city' name='city' type="text" defaultValue={data.place.city}/>
                 </div>
                 <div className='form-group col-sm-6'>
                     <label htmlFor="state">State</label>
-                    <select className='form-control' id='state' name='state' value={data.place.state}>
-                        <option disabled selected value> -- select an option -- </option>
+                    <select className='form-control' id='state' name='state' defaultValue={data.place.state}>
+                        <option disabled selected value='USA'> -- select an option -- </option>
                         <option value="AL">Alabama</option>
 	                    <option value="AK">Alaska</option>
 	                    <option value="AZ">Arizona</option>
@@ -85,14 +85,14 @@ function edit (data) {
                 <div className='row'>
                 <div className='form-group col-sm-6'>
                     <label htmlFor="cuisines">Cuisines</label>
-                    <input className='form-control' id='cuisines' name='cuisines' type="text" value={data.place.cuisines} required />
+                    <input className='form-control' id='cuisines' name='cuisines' type="text" defaultValue={data.place.cuisines} required />
                 </div>
                 <div className='form-group col-sm-6'>
                     <label htmlFor="founded">Established</label>
-                    <input className='form-control' id='founded' name='founded' type="text" value={data.place.founded}/>
+                    <input className='form-control' id='founded' name='founded' type="text" defaultValue={data.place.founded}/>
                 </div>
                 </div>
-                <input className='btn btn-primary' type="submit" value="Submit" />
+                <input className='btn btn-primary' type="submit" defaultValue="Submit" />
             </form>
         </main>
     </Def>
