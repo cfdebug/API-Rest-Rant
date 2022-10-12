@@ -89,7 +89,7 @@ function new_form () {
                 </div>
 				<div className='form-group col-sm-6'>
                     <label htmlFor="founded">Established</label>
-                    <input className='form-control' id='founded' name='founded' type="text"/>
+                    <input className='form-control' id='founded' name='founded' type="text" defaultValue={new Date().getFullYear()}/>
                 </div>
 				</div>
                 <input className='btn btn-primary' type="submit" value="Add Place" />

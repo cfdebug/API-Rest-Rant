@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
     req.body.state = 'USA'
   }
   if (!req.body.founded) {
-    req.body.founded = 'Date Unknown'
+    req.body.founded = new Date().getFullYear()
   }
 
   db.Place.create(req.body)
@@ -79,9 +79,9 @@ router.put('/:id', (req, res) => {
         req.body.state = 'USA'
       }
         if (!req.body.founded) {
-          req.body.founded = 'Date Unknown'
+          req.body.founded = new Date().getFullYear()
         }
-  db.Place.findByIdAndUpdate(req.params.id, req.body)
+  db.Place.findByIdAndUpdate(req.params.id, req.body, {runValidators: true})
   .then(() => {
     res.redirect(`/places/${req.params.id}`)
   })
