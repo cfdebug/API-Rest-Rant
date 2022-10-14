@@ -53,7 +53,6 @@ h3 {
 
   .wrapper {
     min-height: 93vh;
-    margin-bottom: -50px;
   }
 
   .footer {
@@ -93,4 +92,28 @@ form {
   margin: 5px;
 }
 
+.range {
+  margin: 5px;
+  display: inline-block;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.form-range {
+  margin: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.check {
+  padding-top: 30px;
+  display:inline-block;
+  
+}
+
+.form-check {
+  margin: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
 
