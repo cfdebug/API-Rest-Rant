@@ -66,7 +66,6 @@ db.Place.findById(req.params.id)
 
 // EDIT
 router.get('/:id/edit', (req, res) => {
-  console.log(req.params.id)
   db.Place.findById(req.params.id)
   .then(place => {
     res.render('places/edit', {place})
@@ -131,6 +130,16 @@ router.post('/:id/comment', (req, res) => {
   })
   .catch(err => {
       res.render('error404')
+  })
+})
+
+router.delete('/:id/comment/:commentId', (req, res) => {
+  db.Comment.findByIdAndDelete(req.params.commentId)
+  .then(() => {
+    res.redirect(`/places/${req.params.id}`)
+  })
+  .catch(err => {
+    res.render('error404')
   })
 })
 
